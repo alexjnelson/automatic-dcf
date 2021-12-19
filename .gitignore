@@ -3,7 +3,6 @@ DCFs
 *.xlsx
 *.csv
 
+# WIPs - coming soon!
 checkValuations.py
 makeIndexDCF.py
-test.py
-OpenInsider.csv
