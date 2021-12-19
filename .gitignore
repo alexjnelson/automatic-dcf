@@ -3,6 +3,7 @@ Analyzed DCFs
 Generated DCFs
 OpenInsider.c
 AAPL.xlsx
+AAPL_custom.xlsx
 
 checkValuations.py
 makeIndexDCF.py
