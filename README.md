@@ -24,10 +24,17 @@ python makeDCF.py AAPL --peers GOOG TSLA DDD HPQ LNVGY --output AAPL_custom.xlsx
 ```
 
 The CLI interface offers the following options to configure the DCF model inputs:
+
 `--generate_peers` or `-gp`: Set this flag to automatically create a list of peers. If this is not set, you must pass a list of peers using the -p flag 
+
 `--peers` or `-p`: Set a list of peers to compare the given ticker to. Must be set if --generate_peers is not set.
+
 `--risk_free_rate` or `-rfr`: Set the risk-free rate for cost of capital calculations. Defaults to the current 30Y American treasury yield.
+
 `--market_risk_premium` or `-mrp`: Set the market risk premium for cost of capital calculations (as a decimal). Defaults to the most recent American average MRP as given by Statista.
+
 `--terminal_growth` or `-tg`: Set the terminal growth rate in the DCF model (as a decimal). Defaults to PricewaterhouseCoopers\' 50Y projected American GDP growth.
+
 `--forecast_years` or `-fy`: Set how many years to make projections for in the DCF mode (as a decimal). Defaults to 5 years.
+
 `--output` or `-o`: Set the filename to save the DCF in. Must be an .xlsx file.
