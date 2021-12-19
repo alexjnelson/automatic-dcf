@@ -30,7 +30,7 @@ if __name__ == '__main__':
         res = requests.get(url, headers=headers)
         soup = BeautifulSoup(res.text, features='lxml')
         sleep(1)
-        args['risk_free_rate'] = float(soup.find('fin-streamer', {'data-test': 'qsp-price'}).text)
+        args['risk_free_rate'] = float(soup.find('fin-streamer', {'data-test': 'qsp-price'}).text) / 100
 
     make_template(
         args['ticker'],
