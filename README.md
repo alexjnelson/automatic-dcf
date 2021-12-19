@@ -19,7 +19,8 @@ Enter the following commands from the repository root directory to generate a si
 ```bash
 # Create a DCF for Apple (AAPL) using an automatically-generated list of peers
 python makeDCF.py AAPL --generate_peers
-# Create a DCF for Apple (AAPL) with a manually-defined list of peers. Also set the output file to be "AAPL_custom.xlsx" and create projections for 8 years into the future.
+# Create a DCF for Apple (AAPL) with a manually-defined list of peers. 
+# Also set the output file to be "AAPL_custom.xlsx" and create projections for 8 years into the future.
 python makeDCF.py AAPL --peers GOOG TSLA DDD HPQ LNVGY --output AAPL_custom.xlsx --forecast_years 8
 ```
 
