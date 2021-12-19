@@ -2,8 +2,8 @@ __pycache__
 Analyzed DCFs
 Generated DCFs
 OpenInsider.c
-AAPL.xlsx
-AAPL_custom.xlsx
+*.xlsx
+*.png
 
 checkValuations.py
 makeIndexDCF.py
