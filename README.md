@@ -25,7 +25,7 @@ python makeDCF.py AAPL --peers GOOG TSLA DDD HPQ LNVGY --output AAPL_custom.xlsx
 
 The CLI interface offers the following options to configure the DCF model inputs:
 
-`--generate_peers` or `-gp`: Set this flag to automatically create a list of peers. If this is not set, you must pass a list of peers using the -p flag 
+`--generate_peers` or `-gp`: Set this flag to automatically create a list of peers. If this is not set, you must pass a list of peers using the -p flag .
 
 `--peers <list of peers>` or `-p <list of peers>`: Set a list of peers to compare the given ticker to. Must be set if --generate_peers is not set.
 
