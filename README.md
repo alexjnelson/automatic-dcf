@@ -15,7 +15,9 @@ This model is provided for informational purposes only, and is not intended for 
 
 # Usage
 
-Enter the following commands from the repository root directory to generate a simple DCF using the default settings. The DCF will be created as an Excel (.xlsx) file and saved in the local directory by default. This can be customized by setting a filepath using the --output flag.
+Enter the following commands from the repository root directory to generate a simple DCF using the default settings. The DCF will be created as an Excel (.xlsx) file and saved in the local directory by default. This can be customized by setting a filepath using the --output flag. 
+
+After generating a DCF, please make sure to visit the "Analyst Notes" section on the "DCF" tab of the generated Excel file - this will guide you through updating the default assumptions to ensure the model is as useful as possible.
 ```bash
 # Create a DCF for Apple (AAPL) using an automatically-generated list of peers
 python makeDCF.py AAPL --generate_peers
