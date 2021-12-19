@@ -1,8 +1,7 @@
 __pycache__
-Analyzed DCFs
-Generated DCFs
-OpenInsider.c
+DCFs
 *.xlsx
+*.csv
 
 checkValuations.py
 makeIndexDCF.py
