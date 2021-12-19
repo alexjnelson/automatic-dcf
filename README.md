@@ -36,7 +36,7 @@ The CLI interface offers the following options to configure the DCF model inputs
 
 `--market_risk_premium <decimal rate>` or `-mrp <decimal rate>`: Set the market risk premium for cost of capital calculations. Defaults to the most recent American average MRP as given by Statista (0.055).
 
-`--terminal_growth <decimal rate>` or `-tg <decimal rate>`: Set the terminal growth rate in the DCF model. Defaults to PricewaterhouseCoopers\' 50Y projected American GDP growth (~0.0181).
+`--terminal_growth <decimal rate>` or `-tg <decimal rate>`: Set the terminal growth rate in the DCF model. Defaults to PricewaterhouseCoopers\' 50Y projected American GDP annual growth rate (~0.0181).
 
 `--forecast_years <integer number of years>` or `-fy <integer number of years>`: Set how many years to make projections for in the DCF model. Defaults to 5 years.
 
