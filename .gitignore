@@ -3,7 +3,6 @@ Analyzed DCFs
 Generated DCFs
 OpenInsider.c
 *.xlsx
-*.png
 
 checkValuations.py
 makeIndexDCF.py
