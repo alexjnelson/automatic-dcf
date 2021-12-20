@@ -4,5 +4,6 @@
     "rfr": 0.018,
     "mrp": 0.055,
     "terminal_growth": 0.018050372,
+    "min_tax_rate": 0.2,
     "forecast_years": 5
 }

@@ -40,4 +40,6 @@ The CLI interface offers the following options to configure the DCF model inputs
 
 `--forecast_years <integer number of years>` or `-fy <integer number of years>`: Set how many years to make projections for in the DCF model. Defaults to 5 years.
 
+`--min_tax_rate <decimal rate>` or `-tr <decimal rate>`: Set the minimum tax rate for a company (as a decimal). Tax rate is typically calculated by the program, but the calculated value will not be used if it is below the minimum. Defaults to 0.2 (20%).
+
 `--output <filepath>` or `-o <filepath>`: Set the filename to save the DCF in. Must be an .xlsx file.

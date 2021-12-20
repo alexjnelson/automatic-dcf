@@ -105,7 +105,7 @@ def colnum_string(n):
     return string
 
 
-def make_financials(ticker: str, book: xls.Workbook, driver: webdriver.Chrome):
+def make_financials(ticker: str, book: xls.Workbook, driver: webdriver.Chrome, min_tax_rate: float):
     statements = ['financials', 'balance-sheet', 'cash-flow']  # "financials" means income statement
     names = ['Income Statement', 'Balance Sheet', 'Cash Flow']
 
@@ -189,7 +189,7 @@ def make_financials(ticker: str, book: xls.Workbook, driver: webdriver.Chrome):
                 except KeyError:
                     pass
 
-            tax_rate = max(tax_rate, 0)
+            tax_rate = max(tax_rate, min_tax_rate)
 
         sheet = book.add_worksheet(name)
         sheet.freeze_panes(2, 1)
@@ -786,7 +786,7 @@ def make_dcf(dfs: dict, ticker: str, peers: list, tax_rate: float, rfr: float, m
         sheet.write(25, i + 2, ebit_margin, supp_percent)
         sheet.write(27, i + 2, f"={p}28 * ({c}25 + 1)", key_figure)
         sheet.write(28, i + 2, f"={c}28 * {c}26", regular_data)
-        sheet.write(29, i + 2, f"={c}29 * $B$14", regular_data)
+        sheet.write(29, i + 2, f"=IF({c}29 > 0, {c}29 * $B$14, 0)", regular_data)
         sheet.write(30, i + 2, f"={c}29 - {c}30", regular_data)
         sheet.write(31, i + 2, f"={c}28 * $B$15", regular_data)
         sheet.write(32, i + 2, f"={c}28 * $B$16", regular_data)
@@ -856,14 +856,14 @@ def make_dcf(dfs: dict, ticker: str, peers: list, tax_rate: float, rfr: float, m
     sheet.write(56, 0, message_to_analyst, notes)
 
 
-def make_template(ticker, peers, rfr, mrp, terminal_growth, forecast_years, peer_gen_depth=0, outfile=None):
+def make_template(ticker, peers, rfr, mrp, terminal_growth, forecast_years, min_tax_rate=0.2, peer_gen_depth=0, outfile=None):
     if outfile == None:
         outfile = ticker.replace('.', '-') + '.xlsx'
 
     driver = webdriver.Chrome(options=options)
     try:
         writer = xls.Workbook(outfile)
-        dfs, tax_rate = make_financials(ticker, writer, driver)
+        dfs, tax_rate = make_financials(ticker, writer, driver, min_tax_rate)
         make_peers(ticker, peers, tax_rate, dfs, writer, peer_gen_depth, driver)
         make_dcf(dfs, ticker, peers, tax_rate, rfr, mrp, terminal_growth, forecast_years, writer)
     finally:
@@ -884,6 +884,7 @@ if __name__ == '__main__':
     # default terminal growth is the CAGR of the American GDP projection by PWC from 2016 to 2050
     # =(1+(34102-18562)/18562)^(1/(2050-2016))-1
     terminal_growth = config['terminal_growth']
+    min_tax_rate = config['min_tax_rate']
     forecast_years = config['forecast_years']
 
-    make_template(ticker, peers, rfr, mrp, terminal_growth, forecast_years, 2)
+    make_template(ticker, peers, rfr, mrp, terminal_growth, forecast_years, min_tax_rate, 2)
