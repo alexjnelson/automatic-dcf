@@ -345,6 +345,7 @@ def get_peer(ticker, tax_rate, dfs):
 
         df.loc['Debt/Equity'] = df.loc['Total Debt'] / df.loc['Market Cap']
         df.loc['Unlevered Beta'] = df.loc['Equity Beta'] / (1 + (1 - tax_rate) * df.loc['Debt/Equity'])
+        df.loc['Unlevered Beta'] = df.loc['Unlevered Beta'].apply(lambda x: x or '')
 
         df.loc['P/E Ratio'] = max(df.loc['Market Cap', 'Data'] / df.loc['LTM Earnings', 'Data'], 0.)
         df.loc['EV/Sales'] = max(df.loc['Enterprise Value', 'Data'] / df.loc['LTM Sales', 'Data'], 0.)

@@ -27,7 +27,7 @@ if __name__ == '__main__':
         raise ValueError('Output file must use a .xlsx extension.')
 
     if args['risk_free_rate'] is None:
-        url = f'https://finance.yahoo.com/quote/%5ETYX/'
+        url = f'https://finance.yahoo.com/quote/%5ETNX'
         res = requests.get(url, headers=headers)
         soup = BeautifulSoup(res.text, features='lxml')
         sleep(1)

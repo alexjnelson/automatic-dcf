@@ -32,7 +32,7 @@ The CLI interface offers the following options to configure the DCF model inputs
 
 `--peers <list of peers>` or `-p <list of peers>`: Set a list of peers to compare the given ticker to. Must be set if --generate_peers is not set.
 
-`--risk_free_rate <decimal rate>` or `-rfr <decimal rate>`: Set the risk-free rate for cost of capital calculations. Defaults to the current 30Y American treasury yield.
+`--risk_free_rate <decimal rate>` or `-rfr <decimal rate>`: Set the risk-free rate for cost of capital calculations. Defaults to the current 10Y American treasury yield.
 
 `--market_risk_premium <decimal rate>` or `-mrp <decimal rate>`: Set the market risk premium for cost of capital calculations. Defaults to the most recent American average MRP as given by Statista (0.055).
 

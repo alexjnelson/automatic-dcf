@@ -2,6 +2,7 @@ __pycache__
 DCFs
 *.xlsx
 *.csv
+other
 
 # WIPs - coming soon!
 checkValuations.py
